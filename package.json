@@ -2,15 +2,24 @@
   "name": "react-app-starter-template",
   "version": "0.0.1",
   "description": "Template to react app (typescript)",
+  "keywords": [],
+  "author": "Josué Espinosa <benjamin.espinosa-dev@gmail.com> (https://joshesp.github.io/web-page/)",
+  "repository": "https://github.com/joshesp/react-app-starter-template.git",
+  "license": "ISC",
   "scripts": {
     "dev": "webpack serve --open --config config/webpack.dev.ts",
     "build": "webpack --config config/webpack.prod.ts",
     "start": "echo \"Configure your serve\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "lint-staged eslint .",
+    "lint:fix": "eslint --fix . && prettier --write ."
   },
-  "keywords": [],
-  "author": "Josué Espinosa <benjamin.espinosa-dev@gmail.com> (https://joshesp.github.io/web-page/)",
-  "license": "ISC",
+  "lint-staged": {
+		"./**/*.{ts,tsx,js,jsx}": [
+			"prettier --check .",
+			"prettier --write ."
+		]
+	},
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -32,11 +41,15 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "fork-ts-checker-webpack-plugin": "^7.2.11",
     "html-webpack-plugin": "^5.5.0",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
@@ -46,6 +59,5 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
   },
-  "browserslist": "> 0.25%, not dead, not ie 11",
-  "repository": "https://github.com/joshesp/react-app-starter-template.git"
+  "browserslist": "> 0.25%, not dead, not ie 11"
 }
