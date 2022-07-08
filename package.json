@@ -1,7 +1,7 @@
 {
-  "name": "init-project-react",
+  "name": "react-app-starter-template",
   "version": "0.0.1",
-  "description": "",
+  "description": "Template to react app (typescript)",
   "scripts": {
     "dev": "webpack serve --open --config config/webpack.dev.ts",
     "build": "webpack --config config/webpack.prod.ts",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Josué Espinosa <benjamin.espinosa-dev@gmail.com> (https://joshesp.github.io/web-page/)",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
@@ -45,5 +45,6 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
   },
-  "browserslist": "> 0.25%, not dead, not ie 11"
+  "browserslist": "> 0.25%, not dead, not ie 11",
+  "repository": "https://github.com/joshesp/react-app-starter-template.git"
 }
