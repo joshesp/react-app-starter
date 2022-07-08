@@ -13,6 +13,7 @@ const production: Configuration = {
   },
   mode: "production",
   devtool: "source-map",
+  target: "browserslist",
   optimization: {
     splitChunks: {
       chunks: "all",

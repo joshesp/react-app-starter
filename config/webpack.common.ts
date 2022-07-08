@@ -32,6 +32,13 @@ const common: Configuration = {
         },
       },
       {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "url-loader",
+        options: {
+          limit: 10000,
+        },
+      },
+      {
         type: "asset",
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
       },
