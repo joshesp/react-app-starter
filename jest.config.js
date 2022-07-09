@@ -16,6 +16,7 @@ module.exports = {
 		"<rootDir>/.cache/",
 		"<rootDir>/.github/",
 		"<rootDir>/.vscode/",
+		"<rootDir>/.husky/",
 		"<rootDir>/dist/",
 	],
 	collectCoverage: true,
