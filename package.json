@@ -13,7 +13,7 @@
     "test": "jest --watchAll",
     "lint": "lint-staged eslint .",
     "lint:fix": "eslint --fix . && prettier --write .",
-    "check": "npm run test && npm run build",
+    "check": "jest && npm run build",
     "prepare": "husky install"
   },
   "lint-staged": {
