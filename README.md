@@ -19,9 +19,9 @@ Next I list the packages and configurations added step by step.
 `├──`[`.husky`](.husky) — Hooks to commits.<br>
 `├──`[`__mocks__`](./__mocks__) — Directory to add fake/mock data for testing.<br>
 `├──`[`__tests__`](./__tests__) — Directory to add unit test.<br>
-`├──`[`config`](./config_) — There are webpack config files.<br>
-`├──`[`public`](./public_) — Static assets.<br>
-`├──`[`src`](./src_) — React components.<br>
+`├──`[`config`](./config) — There are webpack config files.<br>
+`├──`[`public`](./public) — Static assets.<br>
+`├──`[`src`](./src) — React components.<br>
 
 ## Tech Stack
 
