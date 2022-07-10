@@ -1,8 +1,12 @@
 import React from "react"
-import "./App.css"
+import "./App.scss"
 
 const App = () => {
-	return <h1 className="title-app">My react app</h1>
+	return (
+		<div className="app">
+			<h1 className="title-app">My react app</h1>
+		</div>
+	)
 }
 
 export default App
