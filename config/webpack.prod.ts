@@ -6,7 +6,7 @@ const production: Configuration = {
 	module: {
 		rules: [
 			{
-				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
 				test: /.(css)$/,
 			},
 		],

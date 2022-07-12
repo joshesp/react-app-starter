@@ -6,7 +6,7 @@ const development: Configuration = {
 	module: {
 		rules: [
 			{
-				use: ["style-loader", "css-loader"],
+				use: ["style-loader", "css-loader", "sass-loader"],
 				test: /.(css|scss|sass)$/,
 			},
 		],

@@ -1,4 +1,5 @@
 import { CleanWebpackPlugin } from "clean-webpack-plugin"
+import CopyPlugin from "copy-webpack-plugin"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import path from "path"
 import { Configuration as WebpackConfiguration } from "webpack"
@@ -51,6 +52,15 @@ const common: Configuration = {
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: "./public/index.html",
+		}),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: path.resolve(__dirname, "../public/*.(json|png|ico|txt)"),
+					to: path.resolve(__dirname, "../dist"),
+					context: "public/",
+				},
+			],
 		}),
 	],
 }
