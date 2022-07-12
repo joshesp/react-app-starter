@@ -1,6 +1,6 @@
 {
   "name": "react-app-starter-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Template to react app (typescript)",
   "keywords": [],
   "author": "Josué Espinosa <benjamin.espinosa-dev@gmail.com> (https://joshesp.github.io/web-page/)",
@@ -44,6 +44,7 @@
     "babel-jest": "^28.1.2",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
