@@ -1,8 +1,9 @@
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 import { merge } from "webpack-merge"
-import common, { Configuration } from "./webpack.common"
+import { IConfigurationWP, webpackConfig } from "./config"
+import common from "./webpack.common"
 
-const development: Configuration = {
+const development: IConfigurationWP = {
 	module: {
 		rules: [
 			{
@@ -13,8 +14,8 @@ const development: Configuration = {
 	},
 	mode: "development",
 	devServer: {
-		port: 3000,
-		static: "../dist",
+		port: webpackConfig.port,
+		static: `../${webpackConfig.outputDir}`,
 		hot: true,
 		historyApiFallback: { disableDotRule: true },
 	},

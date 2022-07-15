@@ -1,8 +1,10 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { merge } from "webpack-merge"
-import common, { Configuration } from "./webpack.common"
+import { IConfigurationWP, webpackConfig } from "./config"
 
-const production: Configuration = {
+import common from "./webpack.common"
+
+const production: IConfigurationWP = {
 	module: {
 		rules: [
 			{
@@ -19,7 +21,11 @@ const production: Configuration = {
 			chunks: "all",
 		},
 	},
-	plugins: [new MiniCssExtractPlugin()],
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: `${webpackConfig.staticDir}/${webpackConfig.stylessDir}/[name].[contenthash].css`,
+		}),
+	],
 }
 
 export default merge(common, production)
