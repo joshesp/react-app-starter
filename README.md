@@ -22,6 +22,7 @@ Next I list the packages and configurations added step by step.
 `├──`[`config`](./config) — There are webpack config files.<br>
 `├──`[`public`](./public) — Static assets.<br>
 `├──`[`src`](./src) — React components.<br>
+`├──`[`.env.example`](./.env.example) — File with environments vars.<br>
 
 ## Tech Stack
 
