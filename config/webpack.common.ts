@@ -1,20 +1,16 @@
 import { CleanWebpackPlugin } from "clean-webpack-plugin"
 import CopyPlugin from "copy-webpack-plugin"
+import DotenvWebpackPlugin from "dotenv-webpack"
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import path from "path"
-import { Configuration as WebpackConfiguration } from "webpack"
-import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server"
+import { IConfigurationWP, webpackConfig } from "./config"
 
-export interface Configuration extends WebpackConfiguration {
-	devServer?: WebpackDevServerConfiguration
-}
-
-const common: Configuration = {
+const common: IConfigurationWP = {
 	entry: "./src/index.tsx",
 	output: {
-		path: path.resolve(__dirname, "../dist"),
-		filename: "[name].[contenthash].js",
-		publicPath: "",
+		path: path.resolve(__dirname, `../${webpackConfig.outputDir}`),
+		filename: `${webpackConfig.staticDir}/${webpackConfig.scriptsDir}/[name].[contenthash].js`,
+		publicPath: webpackConfig.publicPath,
 	},
 	module: {
 		rules: [
@@ -50,15 +46,22 @@ const common: Configuration = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
+		new DotenvWebpackPlugin({
+			path: path.join(__dirname, "../.env"),
+			safe: true,
+		}),
 		new HtmlWebpackPlugin({
-			template: "./public/index.html",
+			template: `./${webpackConfig.publicDir}/index.html`,
 		}),
 		new CopyPlugin({
 			patterns: [
 				{
-					from: path.resolve(__dirname, "../public/*.(json|png|ico|txt)"),
-					to: path.resolve(__dirname, "../dist"),
-					context: "public/",
+					from: path.resolve(
+						__dirname,
+						`../${webpackConfig.publicDir}/*.(json|png|ico|txt)`
+					),
+					to: path.resolve(__dirname, `../${webpackConfig.outputDir}`),
+					context: `${webpackConfig.publicDir}/`,
 				},
 			],
 		}),
