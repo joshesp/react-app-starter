@@ -1,13 +1,16 @@
-$bgColor: #282c34;
+$titleColor: #acacac;
 
 .app {
 	text-align: center;
-	background-color: $bgColor;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+
+	.title-app {
+		margin: 12px;
+		color: $titleColor;
+	}
 }

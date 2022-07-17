@@ -11,6 +11,7 @@ const common: IConfigurationWP = {
 		path: path.resolve(__dirname, `../${webpackConfig.outputDir}`),
 		filename: `${webpackConfig.staticDir}/${webpackConfig.scriptsDir}/[name].[contenthash].js`,
 		publicPath: webpackConfig.publicPath,
+		assetModuleFilename: `${webpackConfig.staticDir}/media/[hash][ext][query]`,
 	},
 	module: {
 		rules: [
@@ -26,13 +27,6 @@ const common: IConfigurationWP = {
 							"@babel/preset-typescript",
 						],
 					},
-				},
-			},
-			{
-				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-				loader: "url-loader",
-				options: {
-					limit: 10000,
 				},
 			},
 			{
