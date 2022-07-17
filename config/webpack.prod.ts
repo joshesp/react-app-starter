@@ -1,4 +1,5 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import WebpackAssetsManifest from "webpack-assets-manifest"
 import { merge } from "webpack-merge"
 import { IConfigurationWP, webpackConfig } from "./config"
 
@@ -25,6 +26,7 @@ const production: IConfigurationWP = {
 		new MiniCssExtractPlugin({
 			filename: `${webpackConfig.staticDir}/${webpackConfig.stylessDir}/[name].[contenthash].css`,
 		}),
+		new WebpackAssetsManifest(),
 	],
 }
 
